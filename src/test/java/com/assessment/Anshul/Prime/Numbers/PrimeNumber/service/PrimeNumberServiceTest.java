@@ -48,7 +48,7 @@ class PrimeNumberServiceTest {
 
   @Test
   @DisplayName("Get Prime Numbers based on Invalid input")
-  public void whenInValidInputThenPrimeNumbersNotFound() throws NegativeInputException {
+  public void whenInValidInputThenPrimeNumbersNotFound() {
     int inputNumber = -4;
     String message="Input number is negative";
 
@@ -61,7 +61,7 @@ class PrimeNumberServiceTest {
 
   @Test
   @DisplayName("Get Prime Numbers based on Invalid input And Concurrent Algorithm")
-  public void whenInValidInputThenPrimeNumbersNotFoundUsingConcurrentAlgorithm() throws NegativeInputException {
+  public void whenInValidInputThenPrimeNumbersNotFoundUsingConcurrentAlgorithm() {
     int inputNumber = -20;
     String message="Input number is negative";
 

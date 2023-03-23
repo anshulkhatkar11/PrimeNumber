@@ -44,7 +44,7 @@ class PrimeControllerTest {
 
     @Test
     @DisplayName("Get Prime Numbers when input number is valid Using Sieve Algorithm")
-    void wheninputIsValidAndAlgorithmIsSieve() throws Exception {
+    void whenInputIsValidAndAlgorithmIsSieve() throws Exception {
       int input=10;
       Mockito.when(primeNumberService.calculatePrimesUsingSieve(input)).thenReturn(localResponse);
 
@@ -57,7 +57,7 @@ class PrimeControllerTest {
 
   @Test
   @DisplayName("Get Prime Numbers when input number is valid Using Concurrent Algorithm")
-  void wheninputIsValidAndAlgorithmIsConcurrent() throws Exception {
+  void whenInputIsValidAndAlgorithmIsConcurrent() throws Exception {
     int input=10;
     Mockito.when(primeNumberService.calculatePrimesUsingConcurrentAlgorithm(input)).thenReturn(localResponse);
 
