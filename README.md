@@ -8,10 +8,12 @@
 ### 2.Varying return content types have been provided such as XML based and JSON based depending on value of Accept key in headers
 Eg 
 In this request, the result would be in JSON
+
  A. curl --location 'localhost:8080/primes/345' \
 --header 'Accept: application/json'
 
 Meanwhile in this request, result would be in XML
+
  B. curl --location 'localhost:8080/primes/345' \
 --header 'Accept: application/xml'
 
@@ -41,3 +43,4 @@ http://localhost:8080/swagger-ui/index.html
 
 
 ### 7.It has been deployed on Railways App
+https://primenumber-production.up.railway.app/primes/15
