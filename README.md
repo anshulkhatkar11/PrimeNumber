@@ -38,7 +38,7 @@ curl --location 'localhost:8080/actuator/health' \
 --header 'Accept: application/json'
 
 
-### 6.Swagger OpenAPI have been added to get information related to the API. It can be assessed at the following url
+### 6.Swagger OpenAPI has been added to get information related to the API. It can be assessed at the following url
 http://localhost:8080/swagger-ui/index.html
 
 
