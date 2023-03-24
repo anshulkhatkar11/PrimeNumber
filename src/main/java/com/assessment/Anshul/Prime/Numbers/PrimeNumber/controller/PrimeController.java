@@ -39,7 +39,7 @@ public class PrimeController {
     produces = {MediaType.APPLICATION_JSON_VALUE,MediaType.APPLICATION_XML_VALUE})
   public ResponseEntity<LocalResponse> getPrimes(@PathVariable("number") int number, @RequestParam(required = false) String algorithm)
       throws NegativeInputException {
-    LocalResponse response = null;
+    LocalResponse response;
     LOGGER.info("Inside primeNumberService of PrimeNumber Controller");
     if(algorithm!=null && algorithm.equals("Concurrent")){
       response = primeNumberService.calculatePrimesUsingConcurrentAlgorithm(number);

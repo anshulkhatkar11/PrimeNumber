@@ -44,6 +44,14 @@ public class PrimeNumberTest {
   }
 
   @Test
+  @DisplayName("Get Prime Numbers when input number is out of range")
+  public void whenInputNumberIsOutOfRange() throws Exception {
+    this.mockMvc.perform(get("/primes/21474900")).andDo(print()).andExpect(status().is4xxClientError())
+      .andExpect(content().contentType("application/json"))
+      .andExpect(jsonPath("$.message").value("Integer Overflow. Please enter a number in the range of 0 to 21474899"));
+  }
+
+  @Test
   @DisplayName("Get Prime Numbers when input number is valid and Concurrent Algorithm is Used")
   public void whenInputNumberIsValidAndConcurrentAlgorithmIsUsed() throws Exception {
     List<Integer> outputPrimes = createOutputList();

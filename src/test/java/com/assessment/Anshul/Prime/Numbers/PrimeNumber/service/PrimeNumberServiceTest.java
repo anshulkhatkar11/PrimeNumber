@@ -21,7 +21,7 @@ class PrimeNumberServiceTest {
 
 
   @Test
-  @DisplayName("Get Prime Numbers based on Valid input")
+  @DisplayName("Get Prime Numbers based on Valid input and Sieve Algorithm")
   public void whenValidInput_thenPrimeNumbersFound() throws NegativeInputException {
     int inputNumber = 10;
     List<Integer> outputResult = createOutputList();
@@ -47,7 +47,7 @@ class PrimeNumberServiceTest {
   }
 
   @Test
-  @DisplayName("Get Prime Numbers based on Invalid input")
+  @DisplayName("Get Prime Numbers based on Invalid input and Sieve Algorithm")
   public void whenInValidInputThenPrimeNumbersNotFound() {
     int inputNumber = -4;
     String message="Input number is negative";
@@ -67,6 +67,19 @@ class PrimeNumberServiceTest {
 
     NegativeInputException thrown = Assertions.assertThrows(NegativeInputException.class, () -> {
       primeNumberService.calculatePrimesUsingConcurrentAlgorithm(inputNumber);
+    });
+
+    assertEquals(message, thrown.getMessage());
+  }
+
+  @Test
+  @DisplayName("Get Prime Numbers based on Input Out of Range And Sieve Algorithm")
+  public void whenInputOutOfRangeThenPrimeNumbersNotFound() {
+    int inputNumber = 21474900;
+    String message="Integer Overflow. Please enter a number in the range of 0 to 21474899";
+
+    ArithmeticException thrown = Assertions.assertThrows(ArithmeticException.class, () -> {
+      primeNumberService.calculatePrimesUsingSieve(inputNumber);
     });
 
     assertEquals(message, thrown.getMessage());

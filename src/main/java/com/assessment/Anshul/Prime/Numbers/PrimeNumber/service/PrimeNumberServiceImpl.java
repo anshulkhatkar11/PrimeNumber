@@ -17,10 +17,15 @@ import java.util.concurrent.Future;
 @Service
 public class PrimeNumberServiceImpl implements PrimeNumberService {
 
+  private int maxValue=21474899;
+
   @Override
   public LocalResponse calculatePrimesUsingSieve(int n) throws NegativeInputException {
     if (n < 0) {
       throw new NegativeInputException("Input number is negative");
+    }
+    if(n>maxValue){
+      throw new ArithmeticException("Integer Overflow. Please enter a number in the range of 0 to 21474899");
     }
     boolean prime[] = new boolean[n + 1];
     Arrays.fill(prime, true);
@@ -46,6 +51,9 @@ public class PrimeNumberServiceImpl implements PrimeNumberService {
   public LocalResponse calculatePrimesUsingConcurrentAlgorithm(int n) throws NegativeInputException {
     if (n < 0) {
       throw new NegativeInputException("Input number is negative");
+    }
+    if(n>maxValue){
+      throw new ArithmeticException("Integer Overflow. Please enter a number in the range of 0 to 21474899");
     }
 
     ExecutorService executor = Executors.newFixedThreadPool(4);
